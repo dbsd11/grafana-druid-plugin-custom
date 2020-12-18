@@ -258,7 +258,24 @@ function (angular, _, dateMath, moment) {
       }
 
       if (lucaSQL) {
+        lucaSQL = templateSrv.replace(lucaSQL)
         promise = this._sqlQuery(lucaSQL)
+        return promise.then(function(response) {
+          var dimensionsObj={}
+          var events=[]
+          var i=0;
+          response.data.forEach(function(v){
+             _.extend(dimensionsObj, v)
+             if(!v["timestamp"]){
+               v["timestamp"]=v["__time"]?new Date(v["__time"]).getTime():new Date(new Date().getTime()-10*60*1000).toISOString()
+             }
+             events.push({"event":v, "offset":i++,"segmentId":'noSegment'})
+          })
+          var sqlGroupByData = _.map(events, 'event').map(function(v){
+             return {"timestamp":v["timestamp"], "event":v}
+          })
+          return convertGroupByData(sqlGroupByData,groupBy,metricNames)
+        });
       } else if (rawQuery) {
         rawQuery.intervals = intervals
         promise = this._rawQuery(rawQuery)
