@@ -26,3 +26,6 @@ I cloned the source from the Pull Request by Carl Bergquist and changed the plug
 All the credits for the original code and enahcement to 2.5 goes to Quantiply and Carl Bergquist. 
 
 Opensourcing all the changes done to the plugin to support Grafana-3.0.
+
+## Nodejs版本：
+v0.10.48
