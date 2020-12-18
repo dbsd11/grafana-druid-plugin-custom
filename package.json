@@ -1,7 +1,7 @@
 {
   "name": "abhisant-druid-plugin",
-  "version": "0.0.3",
-  "description": "Grafana plugin for Druid real-time OLAP database",
+  "version": "0.0.5",
+  "description": "ur-druid-datasource,Grafana plugin for Druid real-time OLAP database",
   "main": "index.js",
   "scripts": {
     "build": "grunt",
