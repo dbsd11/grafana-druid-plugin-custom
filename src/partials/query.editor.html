@@ -455,28 +455,7 @@
   </div>
 </div>
 <!-- raw query -->
-  <div class="gf-form-inline">
-    <div class="gf-form">
-      <label class="gf-form-label query-keyword width-9">
-        Raw Query
-      </label>
-    </div>
 
-    <div class="gf-form" ng-hide="ctrl.addRawQueryMode">
-      <label class="gf-form-label query-keyword">
-        <a ng-click="ctrl.addRawQuery()"><i class="fa fa-plus"></i></a>
-      </label>
-    </div>
-    <div class="gf-form gf-form--grow" ng-show="ctrl.addRawQueryMode">
-      <textarea rows="4" class="gf-form-input" spellcheck="false" ng-model="ctrl.target.currentRawQuery" ng-change="ctrl.getRawQuery" placeholder="(可选)输入完整请求报文" ng-blur="ctrl.targetBlur()">
-    </div>
-
-    <div class="gf-form" ng-show="ctrl.addRawQueryMode">
-      <label class="gf-form-label">
-        <a ng-click="ctrl.clearCurrentRawQuery()"><i class="fa fa-remove"></i></a>
-      </label>
-    </div>
-  </div>
   <!-- raw SQL -->
   <div class="gf-form-inline">
     <div class="gf-form">
